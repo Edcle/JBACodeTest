@@ -8,6 +8,8 @@ namespace JBACodeTest
 {
     static class Program
     {
+        static public DbManager dbManager;
+
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
@@ -16,7 +18,10 @@ namespace JBACodeTest
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new JbaCcForm());
+
+            dbManager = new DbManager();
+
+            Application.Run(new JbaCcForm(dbManager));
         }
     }
 }

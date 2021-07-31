@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBoxInputFileName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.buttonChooseInputFile = new System.Windows.Forms.Button();
             this.buttonImport = new System.Windows.Forms.Button();
@@ -37,14 +37,15 @@
             this.buttonTestDb = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // textBox1
+            // textBoxInputFileName
             // 
-            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.textBoxInputFileName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox1.Location = new System.Drawing.Point(80, 43);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(330, 20);
-            this.textBox1.TabIndex = 0;
+            this.textBoxInputFileName.Location = new System.Drawing.Point(80, 43);
+            this.textBoxInputFileName.Name = "textBoxInputFileName";
+            this.textBoxInputFileName.Size = new System.Drawing.Size(330, 20);
+            this.textBoxInputFileName.TabIndex = 0;
+            this.textBoxInputFileName.TextChanged += new System.EventHandler(this.textBoxInputFileName_TextChanged);
             // 
             // label1
             // 
@@ -65,6 +66,7 @@
             this.buttonChooseInputFile.TabIndex = 2;
             this.buttonChooseInputFile.Text = "...";
             this.buttonChooseInputFile.UseVisualStyleBackColor = true;
+            this.buttonChooseInputFile.Click += new System.EventHandler(this.buttonChooseInputFile_Click);
             // 
             // buttonImport
             // 
@@ -76,6 +78,7 @@
             this.buttonImport.TabIndex = 3;
             this.buttonImport.Text = "Go";
             this.buttonImport.UseVisualStyleBackColor = true;
+            this.buttonImport.Click += new System.EventHandler(this.buttonImport_Click);
             // 
             // textBoxStatus
             // 
@@ -107,6 +110,7 @@
             this.buttonTestDb.TabIndex = 6;
             this.buttonTestDb.Text = "Test DB contents";
             this.buttonTestDb.UseVisualStyleBackColor = true;
+            this.buttonTestDb.Click += new System.EventHandler(this.buttonTestDb_Click);
             // 
             // JbaCcForm
             // 
@@ -119,7 +123,7 @@
             this.Controls.Add(this.buttonImport);
             this.Controls.Add(this.buttonChooseInputFile);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.textBoxInputFileName);
             this.Name = "JbaCcForm";
             this.Text = "JBA Code Challenge / Ed Key";
             this.ResumeLayout(false);
@@ -129,7 +133,7 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBoxInputFileName;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button buttonChooseInputFile;
         private System.Windows.Forms.Button buttonImport;
