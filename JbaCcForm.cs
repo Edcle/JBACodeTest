@@ -10,11 +10,12 @@ using System.Windows.Forms;
 
 namespace JBACodeTest
 {
-    public partial class Form1 : Form
+    public partial class JbaCcForm : Form
     {
-        public Form1()
+        public JbaCcForm()
         {
             InitializeComponent();
         }
+
     }
 }
