@@ -53,7 +53,7 @@ namespace JBACodeTest
                         }
                         command.CommandText += ";";
 
-                        //command.ExecuteNonQuery();
+                        command.ExecuteNonQuery();
 
                         i += block;
                     }
