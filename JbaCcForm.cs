@@ -23,8 +23,8 @@ namespace JBACodeTest
             InitializeComponent();
 
             buttonImport.Enabled = false;
-            textBoxInputFileName.Text = @"C:\Users\Ed\Documents\GitHub\JBACodeTest\jba-software-code-challenge-data-transformation\cru-ts-2-10.1991-2000-cutdown.pre";
-            textBoxDbPath.Text = @"C:\Users\Ed\Documents\GitHub\JBACodeTest\TestDatabase.mdf";
+            //textBoxInputFileName.Text = @"C:\Users\Ed\Documents\GitHub\JBACodeTest\jba-software-code-challenge-data-transformation\cru-ts-2-10.1991-2000-cutdown.pre";
+           // textBoxDbPath.Text = @"C:\Users\Ed\Documents\GitHub\JBACodeTest\TestDatabase.mdf";
 
             ClearStatus();
             //AddStatusLine("Started app");
@@ -48,8 +48,8 @@ namespace JBACodeTest
             openFileDialog.InitialDirectory = System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location);
             openFileDialog.RestoreDirectory = true;
             openFileDialog.Title = "Select database";
-            openFileDialog.DefaultExt = "mdb";
-            openFileDialog.Filter = "Microsoft Access Database files (*.mdb)|*.pre";
+            openFileDialog.DefaultExt = "mdf";
+            openFileDialog.Filter = "SQL Server data file (*.mdf)|*.mdf";
             openFileDialog.FilterIndex = 1;
 
             if (openFileDialog.ShowDialog() == DialogResult.OK)

@@ -117,9 +117,9 @@ namespace JBACodeTest
                     Int32 count = (Int32)command.ExecuteScalar();
 
                     result += String.Format("Table contains {0} rows\r\n", count);
-                    result += "First 10 rows:\r\n";
+                    result += "First 24 rows:\r\n";
 
-                    command.CommandText = "SELECT TOP 10 * FROM Precipitation";// "SELECT * FROM Precipitation LIMIT 0,10;";
+                    command.CommandText = "SELECT TOP 24 * FROM Precipitation";// "SELECT * FROM Precipitation LIMIT 0,10;";
 
                     SqlDataReader reader = command.ExecuteReader();
                     try
