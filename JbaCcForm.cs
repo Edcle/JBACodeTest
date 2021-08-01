@@ -80,9 +80,9 @@ namespace JBACodeTest
             List<RainfallEntry> entries = ParseFile(textBoxInputFileName.Text);
             AddStatusLine("Parse complete, returned " + entries.Count.ToString() + " entries");
 
-
-            //_dbManager.Connect(textBoxDbPath.Text);
-
+            AddStatusLine("Inserting into DB, please wait...");
+            var result = _dbManager.InsertData(textBoxDbPath.Text, entries);
+            AddStatusLine("Finished import: " + result);
         }
 
         private List<RainfallEntry> ParseFile(string inputFile)
@@ -191,7 +191,7 @@ namespace JBACodeTest
 
         private void buttonTestDb_Click(object sender, EventArgs e)
         {
-
+            AddStatusLine(_dbManager.Report(textBoxDbPath.Text));
         }
 
         private void textBoxInputFileName_TextChanged(object sender, EventArgs e)
