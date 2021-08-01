@@ -99,7 +99,7 @@ namespace JBACodeTest
             return @"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = " + localDbPath + @"; Integrated Security = True";
         }
 
-        internal string Report(string localDbPath)
+        internal string Report(string localDbPath, int x, int y)
         {
 
             string result = "Test:\r\n";
@@ -117,9 +117,9 @@ namespace JBACodeTest
                     Int32 count = (Int32)command.ExecuteScalar();
 
                     result += String.Format("Table contains {0} rows\r\n", count);
-                    result += "First 24 rows:\r\n";
+                    result += String.Format("First 24 rows at {0},{1}:\r\n",x,y);
 
-                    command.CommandText = "SELECT TOP 24 * FROM Precipitation";// "SELECT * FROM Precipitation LIMIT 0,10;";
+                    command.CommandText = String.Format("SELECT TOP 24 * FROM Precipitation WHERE Xref = {0} AND Yref = {1}", x, y);// "SELECT * FROM Precipitation LIMIT 0,10;";
 
                     SqlDataReader reader = command.ExecuteReader();
                     try

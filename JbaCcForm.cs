@@ -191,7 +191,7 @@ namespace JBACodeTest
 
         private void buttonTestDb_Click(object sender, EventArgs e)
         {
-            AddStatusLine(_dbManager.Report(textBoxDbPath.Text));
+            AddStatusLine(_dbManager.Report(textBoxDbPath.Text, 115, 263));
         }
 
         private void textBoxInputFileName_TextChanged(object sender, EventArgs e)
