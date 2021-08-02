@@ -253,7 +253,7 @@ ServiceFabricBackup/
 
 # SQL Server files
 #*.mdf ## allow this to be added just for convenience of demo
-*.ldf
+#*.ldf ## allow this to be added just for convenience of demo
 *.ndf
 
 # Business Intelligence projects
