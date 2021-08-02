@@ -30,7 +30,25 @@ namespace JBACodeTest
                 {
                     var start = DateTime.Now;
 
-                    command.CommandText = "DELETE FROM Precipitation"; // NB deleting all existing rows in the table - for this test example at least, stops stuff accumulating in the DB
+                    // create the table if it doesn't exist already
+                    command.CommandText = 
+                        @"IF NOT (EXISTS (SELECT * 
+                        FROM INFORMATION_SCHEMA.TABLES
+                        WHERE TABLE_NAME = 'Precipitation'))
+                        BEGIN
+                            CREATE TABLE[dbo].[Precipitation]
+                            (
+                                [Xref] INT  NOT NULL,
+                                [Yref] INT NOT NULL,
+                                [Date] DATE NOT NULL,
+                                [Value] INT NOT NULL
+                            )
+                        END;";
+                    command.ExecuteNonQuery();
+
+
+                    // NB deleting all existing rows in the table - for this test example at least, allows it to be run multiple times and stops stuff accumulating in the DB
+                    command.CommandText = "DELETE FROM Precipitation"; 
                     command.ExecuteNonQuery();
 
                     int blockSize = 200;
