@@ -23,11 +23,9 @@ namespace JBACodeTest
             InitializeComponent();
 
             buttonImport.Enabled = false;
-            //textBoxInputFileName.Text = @"C:\Users\Ed\Documents\GitHub\JBACodeTest\jba-software-code-challenge-data-transformation\cru-ts-2-10.1991-2000-cutdown.pre";
-           // textBoxDbPath.Text = @"C:\Users\Ed\Documents\GitHub\JBACodeTest\TestDatabase.mdf";
 
             ClearStatus();
-            //AddStatusLine("Started app");
+            AddStatusLine("App started. Please select local DB file and input .pre file then click Go");
 
         }
 
